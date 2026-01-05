@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 type cardProperties = {
     title ?: string;
     content ?: string;
-    imgUrl ?: string | undefined;
+    imgUrl : string ;
     date : string;
     slug: string
 }
@@ -25,7 +25,7 @@ export const Card = ( { title, content, date, imgUrl, slug} : cardProperties ) =
     <div onClick={ () => blogNavigation(slug) } className="card bg-base-100 w-full shadow-sm  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
          <figure className="relative w-full h-80">
             <Image
-              src={imgUrl}
+              src={ imgUrl }
               fill
               alt="Shoes"
               objectFit='cover'
