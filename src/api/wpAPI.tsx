@@ -1,11 +1,8 @@
 //api route to get the pages from wordpress
-export const getPagesInfo = async() => {
-    const data = await fetch('')
-}
 
 export const getAllPostsWP = async() => {
     try {
-        const response = await fetch('http://localhost:8882/wp-json/wp/v2/posts?_embed');
+        const response = await fetch(`${process.env.WORDPRESS_API_URL}wp-json/wp/v2/posts?_embed`);
         const dataJson = await response.json();
         const dataObj = await dataJson.map( ({ title, date, excerpt, _embedded, slug } : any) => {
           return {
